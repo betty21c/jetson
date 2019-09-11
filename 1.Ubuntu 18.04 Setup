@@ -1,0 +1,26 @@
+1.Ubuntu 한글입력
+https://techlog.gurucat.net/288
+
+2.putty 설정, port 변경
+https://zerodark.tistory.com/12
+https://koboogy.tistory.com/6
+
+sudo gedit /etc/ssh/sshd_config
+#Port 22 막고 9999 포트사용
+Port 9999
+
+# 다시 서비스시작
+sudo /etc/init.d/ssh restart
+
+3.방화벽 포트열기
+apt install ufw
+ufw --version
+sudo ufw status verbose
+
+https://webdir.tistory.com/206
+
+sudo ufw allow 9999
+
+4.Pi Camera TEST
+https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/
+https://github.com/JetsonHacksNano/CSI-Camera
