@@ -1,0 +1,11 @@
+Jetson Nano Cross Complile 환경구축임
+CUDA C++ 만 지원가능
+Nsight Eclipse 에서 파이썬 PyDev 소프트웨어 설치시 호환에 문제가 있음
+
+Jetson Nano 도 TX1 셋업으로 따라하며 설치가능
+For Jetson TX1/TX2: 
+
+https://kyubot.tistory.com/88
+
+Target 설정에서 Jetson 의 [login id]@[ip address]
+EX) jiheo@123.123.123.27
