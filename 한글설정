@@ -1,0 +1,5 @@
+https://techlog.gurucat.net/288
+
+sudo add-apt-repository ppa:createsc/3beol
+sudo apt-get update
+sudo apt-get install ibus ibus-hangul
