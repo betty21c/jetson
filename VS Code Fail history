@@ -1,0 +1,43 @@
+VS Code 설치 실패 기록
+
+1. 참고사이트
+https://devtalk.nvidia.com/default/topic/1049448/jetson-nano/quick-build-guide-for-visual-studio-code-on-the-nano/
+https://docs.roelink.eu/nvidia-jetson-nano.html#chapter-1-setup
+https://github.com/zenetio/Install-VScode-On-TX2
+
+2. 설치중에 node.js 버전문제로 Error 발생 (Version 10설치시 진행됨)
+https://www.sysnet.pe.kr/2/0/11944
+
+sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
+$ export NVM_DIR="$HOME/.nvm"
+$ [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+$ [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+$ nvm ls-remote
+$ nvm install 10.16.0
+
+$ node -v
+v10.16.0
+
+$ npm -v
+6.9.0
+
+3. 설치중에 메모리부족 문제
+1) https://stackoverflow.com/questions/38558989/node-js-heap-out-of-memory
+gedit package.json 파일에서 2048 => 4096 으로 모두변경 시킴
+node --max-old-space-size=4096 yourFile.js
+
+2) SWAP 메모리 확보 
+https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
+
+sudo swapon --show
+sudo fallocate -l 1G /swapfile
+ls -lh /swapfile
+sudo chmod 600 /swapfile
+ls -lh /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+echo "use sudo swapoff /swapfile"
+echo "use sudo swapon --show"
