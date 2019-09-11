@@ -1,5 +1,4 @@
 VS Code 설치 실패 기록
-
 1. 참고사이트
 https://devtalk.nvidia.com/default/topic/1049448/jetson-nano/quick-build-guide-for-visual-studio-code-on-the-nano/
 https://docs.roelink.eu/nvidia-jetson-nano.html#chapter-1-setup
@@ -41,3 +40,6 @@ sudo swapon /swapfile
 sudo swapon --show
 echo "use sudo swapoff /swapfile"
 echo "use sudo swapon --show"
+
+4. 오라클 버전문제 Error 시에 8 버전 다운받아서 설치하자
+https://copycoding.tistory.com/205
