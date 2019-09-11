@@ -1,0 +1,41 @@
+Jetson nano 에서 Python 편집기
+VS Code, Nsight Eclipse 버전 Python 설치 실패함
+
+http://egloos.zum.com/mcchae/v/11321964
+http://fisadev.github.io/fisa-vim-config/
+
+1) Ubuntu/Debian
+sudo apt install curl vim exuberant-ctags git ack
+
+혹시 ack 패키지가 없다면,
+
+/etc/apt/sources.list 에서
+deb http://archive.ubuntu.com/ubuntu bionic main
+deb http://archive.ubuntu.com/ubuntu bionic-security main
+deb http://archive.ubuntu.com/ubuntu bionic-updates main
+
+와 같은 식으로 되어 있는지 확인하고
+
+deb http://archive.ubuntu.com/ubuntu bionic main universe
+deb http://archive.ubuntu.com/ubuntu bionic-security main universe
+deb http://archive.ubuntu.com/ubuntu bionic-updates main universe
+와 같이 universe 추가로 수정 후 설치
+
+
+2) Mac
+brew install vim ctags git ack
+
+다음에는 필요 python package 입니다.
+
+pip install pep8 flake8 pyflakes isort yapf
+(시스템 파이썬에 설치하려면 sudo 를 앞에 붙입니다)
+
+이제 ${HOME}/.vimrc 의 내용을 다음과 같이 넣어줍니다.
+아래 wget 으로 다운받아서 홈폴더에 복사해준다.
+VIM 실행시에 Plug-in 이 자동 설치된다.
+
+(기존에 이미 있었으면 .vimrc.org 로 변경)
+mv ~/.vimrc ~/.vimrc.org
+wget -O ~/.vimrc  https://raw.github.com/fisadev/fisa-vim-config/master/.vimrc 
+
+위와 같이 하고 VIM을 처음 띄우면 필요한 설치를 마무리 하게 됩니다.
