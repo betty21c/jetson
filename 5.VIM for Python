@@ -32,6 +32,7 @@ brew install vim ctags git ack
 
 다음에는 필요 python package 입니다.
 
+pip3 install pep8 flake8 pyflakes isort yapf
 pip install pep8 flake8 pyflakes isort yapf
 (시스템 파이썬에 설치하려면 sudo 를 앞에 붙입니다)
 
