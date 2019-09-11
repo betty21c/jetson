@@ -11,7 +11,7 @@ git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 cd Adafruit_Python_SSD1306
 sudo python3 setup.py install
 
-3.Code
+3.i2c 코드수정
 1) git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
 - Jetbot 에 맞게 코드수정
 /home/jiheo/Adafruit_Python_SSD1306/examples/shapes.py
