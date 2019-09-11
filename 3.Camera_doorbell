@@ -1,0 +1,54 @@
+Camera Face 인식 
+dlib-19.17 소스
+
+1. NVIDIA Project :Build a Hardware-based Face Recognition System for $150 with the Nvidia Jetson Nano and Python
+- Prject Blog 
+  https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd
+- project GitHub
+  https://gist.github.com/ageitgey/84943a12dd0d9f54e90f824b94e4c2a9
+  
+- 얼굴인식 GitHub
+  https://github.com/ageitgey/face_recognition#python-code-examples
+
+2. 메모리확보 위한 SWAP
+git clone https://github.com/JetsonHacksNano/installSwapfile
+./installSwapfile/installSwapfile.sh
+
+3. 얼굴인식 dlib-19.17 라이브러리
+
+wget http://dlib.net/files/dlib-19.17.tar.bz2 
+tar jxvf dlib-19.17.tar.bz2
+cd dlib-19.17
+
+4. USB 카메라, 라즈베라 파이 카메라 V2에 따른 셋팅 값이 다름
+
+원본파일 doorbell_camera.py
+카메라V2 doorbell_camera_piV2.py
+USB카메라 doorbell_camera_usb.py
+
+
+# 라즈베리파이 카메라
+def get_jetson_gstreamer_source(capture_width=1280, capture_height=720, display_width=1280, display_height=720, framerate=60, flip_method=0):
+    """
+    Return an OpenCV-compatible video source description that uses gstreamer to capture video from the camera on a Jetson Nano
+    """
+    return (
+            f'nvarguscamerasrc ! video/x-raw(memory:NVMM), ' +
+            f'width=(int){capture_width}, height=(int){capture_height}, ' +
+            f'format=(string)NV12, framerate=(fraction){framerate}/1 ! ' +
+            f'nvvidconv flip-method={flip_method} ! ' +
+            f'video/x-raw, width=(int){display_width}, height=(int){display_height}, format=(string)BGRx ! ' +
+            'videoconvert ! video/x-raw, format=(string)BGR ! appsink'
+            )
+
+# USB Web캠
+# def get_jetson_gstreamer_source(capture_width=1280, capture_height=720, display_width=1280, display_height=720, framerate=60, flip_method=0):
+def get_jetson_gstreamer_source_usb(dev=0, width=640, height=480):
+    """
+    Return an OpenCV-compatible video source description that uses gstreamer to capture video from the camera on a Jetson Nano
+    """
+    gst_str = ('v4l2src device=/dev/video{} ! '
+               'video/x-raw, width=(int){}, height=(int){} ! '
+               'videoconvert ! appsink').format(dev, width, height)
+
+    return gst_str
