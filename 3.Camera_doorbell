@@ -1,6 +1,9 @@
 Camera Face 인식 
 dlib-19.17 소스
 
+0. Pi Camera Setup
+https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/
+
 1. NVIDIA Project :Build a Hardware-based Face Recognition System for $150 with the Nvidia Jetson Nano and Python
 - Prject Blog 
   https://medium.com/@ageitgey/build-a-hardware-based-face-recognition-system-for-150-with-the-nvidia-jetson-nano-and-python-a25cb8c891fd
