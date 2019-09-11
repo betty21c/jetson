@@ -1,0 +1,23 @@
+1.Site
+https://www.raspberrypi-spy.co.uk/2018/04/i2c-oled-display-module-with-raspberry-pi/
+https://ahnbk.com/?p=638
+https://www.jetsonhacks.com/2019/06/07/jetson-nano-gpio/
+
+2.Setup
+sudo apt install -y python-imaging python-smbus i2c-tools
+
+i2cdetect -y 1
+git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+cd Adafruit_Python_SSD1306
+sudo python3 setup.py install
+
+3.Code
+git clone https://github.com/adafruit/Adafruit_Python_SSD1306.git
+git clone https://github.com/NVIDIA-AI-IOT/jetbot/blob/master/jetbot/apps/stats.py
+
+/home/jiheo/Adafruit_Python_SSD1306/examples/
+#from jetbot.utils.utils import get_ip_address
+
+# 128x32 display with hardware I2C:
+# disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST)
+disp = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=1, gpio=1)
