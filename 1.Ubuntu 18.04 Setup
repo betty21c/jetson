@@ -1,6 +1,41 @@
 1.Ubuntu 한글입력
 https://techlog.gurucat.net/288
 
+sudo add-apt-repository ppa:createsc/3beol
+sudo apt-get update
+sudo apt-get install ibus ibus-hangul
+
+
+한글키보드로 한글 입력을 할 수 있게 만드는 과정은 간단하다.
+
+1) 입력기 설치( IBus 설치 )
+2) 몇가지 설정
+    먼저, 입력기 설치다. IBus라는 입력기를 설치할 것이다. 
+    IBus hangul 패치버전 설치를 위한 PPA(Personal Package Archive)를 아래와 같이 추가한다.
+    $ sudo add-apt-repository ppa:createsc/3beol
+
+    PPA를 추가했으니 실제로 IBus와 IBus-hnagul을 설치 한다.
+    $ sudo apt-get update
+    $ sudo apt-get install ibus ibus-hangul
+
+    이제, 몇가지 설정이다.
+    아래그림을 참조하자. System Settings 메뉴에서 두가지만 찾으면 된다.
+
+    첫번째. Language Support.
+    'System Settings' → Language Support → 진입초기에 install을 요구할 경우 진행한다.
+    'Language for menus and windows'에서 아래로 스크롤 해보면 한국어가 보일 것이다. 만약 없다면, Install/Remove Languages 를 선택하여 한국어 혹은 Korean을 선택한다.
+
+    두번째. Text entry.
+    'System Settings' → Text Entry → 좌측 하단의 '+' 버튼 → Korean (Hangul) (IBus) 선택하여 추가한다.
+    한글언어 인 경우는 아래 사진처럼 '한국어 (Hangul)(IBus)' 라고 표시된다.
+
+    여기까지만 하면, 한/영 전환이 가능해지고, 한글입력이 가능해진다.
+    한영전환 키는 'Text Entry' 메뉴의 'Super+Space' 키가 기본값이다.
+
+    우분투에서 Super키라 하면, 윈도우 키를 말한다.
+    한영 전환을 해서 입력해보면, 아래와 같이 system tray에 입력기 아이콘이 바뀌면서 표시된다.
+    태극문양이 IBus hangul의 아이콘이다.
+
 2.putty 설정, port 변경
 https://zerodark.tistory.com/12
 https://koboogy.tistory.com/6
