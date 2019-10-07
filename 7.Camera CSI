@@ -7,3 +7,10 @@ $ gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),width=3820, height
 
 simple_camera.py
 face_detect.py
+
+
+
+<camera test>
+$ sudo apt-get install v4l-utils
+$ v4l2-ctl --list-formats-ext
+
