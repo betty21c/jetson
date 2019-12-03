@@ -14,3 +14,13 @@ face_detect.py
 $ sudo apt-get install v4l-utils
 $ v4l2-ctl --list-formats-ext
 
+=========================================
+sudo apt-get install v4l-utils
+v4l2-ctl --list-formats-ext
+gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),width=3280, height=2464, framerate=21/1, format=NV12' ! nvvidconv flip-method=0 ! 'video/x-raw,width=960, height=616' ! nvvidconv ! nvegltransform ! nveglglessink -e
+gst-launch-1.0 nvarguscamerasrc ! 'video/x-raw(memory:NVMM),width=1280, height=720, framerate=21/1, format=NV12' ! nvvidconv flip-method=0 ! 'video/x-raw,width=960, height=616' ! nvvidconv ! nvegltransform ! nveglglessink -e
+
+https://www.jetsonhacks.com/2019/04/02/jetson-nano-raspberry-pi-camera/
+https://github.com/JetsonHacksNano/CSI-Camera
+https://devtalk.nvidia.com/default/topic/1055004/csi-camera-raspberry-pi-v2-not-work-on-jetson-nano/
+
